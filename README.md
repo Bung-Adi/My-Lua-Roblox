@@ -1,0 +1,1 @@
+List of Lua roblox studio script that's I know or I ever typed
