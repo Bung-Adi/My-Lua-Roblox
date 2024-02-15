@@ -1,0 +1,43 @@
+
+- Variable
+
+    containers for storing data values.
+
+    Suported data type in Lua : text,number,float,boolean,nil,{array}
+
+
+- Opperator
+
+    mathematical symbol to perform operations on variables and values.
+
+
+- Conditions (if,or,and)
+
+    To perform different actions for different decisions.
+
+
+- Function
+
+    Block of code that can be 'called' to accomplish a specific task.
+
+    - Parameter =   a placeholder value/Variable definition in a function. 
+                    Usualy placed next to Function name.
+                    sometimes u need or unneed this in your function. 
+                    Parameter only exist in the scope of that function.
+
+    - Method =      a procedure associated with an object, and generally also a message.
+
+- Library
+
+    is a collection of precompiled codes that can be used later on in a program for some specific well-defined operations.
+
+- Loop
+
+    Code thats allow us to execute the same code over and over again. 
+    or to Iterate throught value stored in table.
+
+    there are 3 loop in lua : For, While, Repeat
+
+- Event.
+
+    When something specific happened.
