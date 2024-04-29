@@ -1,0 +1,20 @@
+Workspace
+  Checkpoints         (Folder)
+    Checkpoin
+    ...
+    Checkpoin
+    FinalCheckpoin
+  Conveyors           (Folder)
+    Conveyor
+    ...
+    Conveyor
+  KillBricks          (Folder)
+    KillBrick
+    ...
+    KillBrick
+  Trampolines         (Folder)
+    Trampoline
+    ...
+    Trampoline
+  SpawnLocation       (Folder)
+  etc...

@@ -1,0 +1,96 @@
+Workspace
+  ...
+  End                   (Folder)
+      FinisherPlate
+      WalkSpeedSkillEffect
+        WalkSpeedSkillEffect.lua
+        SpeedEffectPart
+          Speed         (Value Int)
+          BillBoardGui
+            TextLabel
+        ...
+  StageFive             (Folder)
+      SpawnLocation
+      Checkpoin
+      End
+      StagePart
+        SurfaceGui
+          TextLabel
+      Start
+      FallingPart
+      ...
+  StageFour             (Folder)
+      SpawnLocation
+      Checkpoin
+      End
+      StagePart
+        SurfaceGui
+          TextLabel
+      Start
+      ExpandingPart
+        ExpandingPartScript.lua
+      ...
+      Folder
+        Truss
+        ...
+  StageTree             (Folder)
+      SpawnLocation
+      Checkpoin
+      End
+      StagePart
+        SurfaceGui
+          TextLabel
+      Start
+      MovingPart
+        MovingPartScript.lua
+      ...
+  StageTwo              (Folder)
+      SpawnLocation
+      Checkpoin
+      End
+      GreyPlate
+      StagePart
+        SurfaceGui
+          TextLabel
+      Start
+      Lavas               (Folder)
+        DeadlyLavas.lua
+        Part
+        ...
+  StageOne              (Folder)
+      SpawnLocation
+      Checkpoin
+      End
+      Wedge
+      Part
+      ...
+      StagePart
+        SurfaceGui
+          TextLabel
+      Start
+  Start                 (Folder)
+      SpawnLocation
+      GreenPlate
+
+ServerScriptService
+  Checkpoint.lua
+
+StarterGui
+  ScreenGui
+    LocalScriptGui.lua
+    GuiTextStage
+    GuiTextTimer
+
+Teams
+  Stage 0
+  Stage 1
+  Stage 2
+  Stage 3
+  Stage 4
+  Stage 5
+
+
+Note 
+
+Set Workspace.FallenPartsDestroyHeigt = -50
+and Players.RespawnTime = 0
