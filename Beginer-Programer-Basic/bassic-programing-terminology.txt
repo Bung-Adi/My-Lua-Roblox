@@ -26,6 +26,9 @@
                     Parameter only exist in the scope of that function.
 
     - Method =      a procedure associated with an object, and generally also a message.
+    - Service =     a function or method build in. But powerfull. 
+                    Unlike method Service is always running in the background,
+                    pre-existing, and centralized.
 
 - Library
 
