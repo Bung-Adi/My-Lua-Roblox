@@ -1,0 +1,13 @@
+basically just follow the folder structure like in this project folder
+
+ReplicatedStorage
+  > Modules
+    > Janitor [ModuleScript]
+    > Signal [ModuleScript]
+    > Types [ModuleScript]
+  ...
+ServerScriptService
+  > Server [Script]
+    > InventoryServer [ModuleScript]
+
+Some GUI
