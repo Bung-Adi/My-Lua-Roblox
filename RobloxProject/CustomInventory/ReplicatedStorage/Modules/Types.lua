@@ -20,7 +20,7 @@ export type Hotbar = {
 	Slot6: number?;
 	Slot7: number?;
 	Slot8: number?;
-	Slot0: number?;
+	Slot10: number?;
 }
 export type Armor = {
 	Head: number?;
@@ -29,8 +29,8 @@ export type Armor = {
 }
 export type Inventory = {
 	Inventory: {StackData};
-	Hotbar: {Hotbar};
-	Armor: {Armor};
+	Hotbar: Hotbar;
+	Armor: Armor;
 	NextStackId: number;
 }
 

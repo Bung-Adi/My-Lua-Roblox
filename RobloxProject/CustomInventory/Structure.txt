@@ -10,4 +10,9 @@ ServerScriptService
   > Server [Script]
     > InventoryServer [ModuleScript]
 
+StarterPlayer
+  > StarterPlayerScript
+    > Client [Script]
+      > InventoryClient [ModuleScript]
+
 Some GUI
