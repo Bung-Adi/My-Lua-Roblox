@@ -32,7 +32,13 @@ function InventoryServer.Start()
 	end -- player added
 	Players.PlayerAdded:Connect(InventoryServer.OnPlayerAdded)
 	Players.PlayerRemoving:Connect(InventoryServer.OnPlayerRemoving) -- player remove
+	
 	Signal.ListenRemote("InventoryServer:GetInventoryData", InventoryServer.GetInventoryData) -- Signal events
+	Signal.ListenRemote("InventoryServer:EquipToHotbar", InventoryServer.EquipToHotbar) -- added later
+	Signal.ListenRemote("InventoryServer:UnequipFromHotbar", InventoryServer.UnequipFromHotbar)
+	Signal.ListenRemote("InventoryServer.HoldItem", InventoryServer.HoldItem)
+	Signal.ListenRemote("InventoryServer.UnholdItem", InventoryServer.UnholdItem)
+	
 	game:BindToClose(function()
 		for i, player: Player in Players:GetPlayers() do
 			InventoryServer.SaveData(player)
@@ -236,6 +242,44 @@ end
 function InventoryServer.GetInventoryData(player: Player)
 	while not InventoryServer.AllInventories[player] do task.wait() end -- is there is inventory for player if not wait
 	return InventoryServer.AllInventories[player]
+end
+
+-- finfing stact data from id / aded later
+function InventoryServer.FindStackDataFromId(player: Player, stackId: number)
+	if stackId == nil then return end
+	for i, stackData: Types.StackData in InventoryServer.AllInventories[player].Inventory do
+		if stackData.StackId == stackId then
+			return stackData
+		end
+	end
+end
+-- Holding Unholding Item / aded later
+function InventoryServer.HoldItem(player: Player, slotNum: number)
+	local inv: Types.Inventory = InventoryServer.AllInventories[player]
+	local stackData: Types.StackData? = nil
+	for slotKey: string, stackId: number in inv.Hotbar do
+		if slotKey == "Slot"..slotNum then
+			stackData = InventoryServer.FindStackDataFromId(player, stackId)
+			break
+		end
+	end
+	-- equiping
+	InventoryServer.UnholdItem(player)
+	if stackData ~= nil then
+		local tool: Tool = stackData.Items[1]
+		if not player.Character then return end
+		tool.Parent = player.Character
+		Signal.FireClient(player, "InventoryClient:Update", inv)
+	end
+end
+function InventoryServer.UnholdItem(player: Player)
+	local char: Model = player.Character
+	if not char then return end
+	local human: Humanoid = char:FindFirstChild("Humanoid")
+	if not human then return end
+	human:UnequipTools()
+	-- update client
+	Signal.FireClient(player, "InventoryClient:Update", InventoryServer.AllInventories[player])
 end
 
 -- save data
