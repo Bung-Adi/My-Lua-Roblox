@@ -1,0 +1,16 @@
+Workspace
+  -> Decrease
+    -> DecreaseCoinsScript.lua
+  -> Increase
+    -> IncreaseCoinsScript.lua
+
+ServerScriptService
+  -> DataStore.lua
+
+StarterGui
+  -> Coins (Frame)
+    -> Coins (TextLabel)
+      -> ShowCoins.lua (LocalScript)
+    -> Shadow (TextLabel)
+
+Credit : https://www.youtube.com/@iamLudius
