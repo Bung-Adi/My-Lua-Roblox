@@ -31,7 +31,7 @@ Players.PlayerRemoving:Connect(function(plr)
 	activeTasks[plr.UserId] = nil
 end)
 
--- Setup leaderstats and start saving
+-- Setup leaderstats and sync with DataStore
 Players.PlayerAdded:Connect(function(plr)
 	local leaderstats = Instance.new("Folder")
 	leaderstats.Name = "leaderstats"
@@ -40,6 +40,16 @@ Players.PlayerAdded:Connect(function(plr)
 	local coins = Instance.new("IntValue")
 	coins.Name = "Coins"
 	coins.Parent = leaderstats
+
+	-- Load saved coins from DataStore
+	local success, savedCoins = pcall(function()
+		return PlayerMoney:GetAsync(plr.UserId)
+	end)
+	if success and typeof(savedCoins) == "number" then
+		coins.Value = savedCoins
+	else
+		coins.Value = 0
+	end
 
 	startSavingCoins(plr, coins)
 end)
