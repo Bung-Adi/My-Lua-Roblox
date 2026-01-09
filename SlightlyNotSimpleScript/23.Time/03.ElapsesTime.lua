@@ -1,0 +1,6 @@
+local StartTime = DateTime.now()
+print(StartTime)
+task.wait(3)
+local EndTime = DateTime.now()
+print(EndTime)
+print(EndTime.UnixTimestampMillis - StartTime.UnixTimestampMillis)
