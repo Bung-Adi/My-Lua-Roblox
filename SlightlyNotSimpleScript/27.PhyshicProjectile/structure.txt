@@ -1,0 +1,12 @@
+ReplicatedStorage ->
+  Fireball (RemoteEvent)
+
+ServerStorage
+  cannonball (Mesh / Part)
+
+ServerScriptService ->
+  FireballServer.lua
+  
+StarterPack ->
+  Tool ->
+    FireballLocal.lua
