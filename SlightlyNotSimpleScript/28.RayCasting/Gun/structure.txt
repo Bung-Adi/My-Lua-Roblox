@@ -1,0 +1,9 @@
+Gun (Tool)
+  Script (Script)
+  LocalScript (LocalScript)
+  FireGun (RemoteEvent)
+  Handle (Part) ->
+    Part (Part) ->
+      WeldConstrain
+    Tip (Part) ->
+      WeldConstrain
